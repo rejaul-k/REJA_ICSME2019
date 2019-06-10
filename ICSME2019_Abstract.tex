@@ -1,0 +1,98 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Identifying and Predicting Key Features to Support Bug Reporting
+}
+
+%****************List of Authors***************************** 
+\author{\IEEEauthorblockN{Md. Rejaul Karim\IEEEauthorrefmark{1},
+Akinori Ihara\IEEEauthorrefmark{2}, 
+Eunjong Choi\IEEEauthorrefmark{3}, and
+Hajimu Iida\IEEEauthorrefmark{1}
+}
+
+
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Nara Institute of Science and Technology (NAIST), Japan}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Wakayama University, Japan}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}Kyoto Institute of Technology, Japan}
+Email: rejaul.karim.qw4@is.naist.jp, ihara@sys.wakayama-u.ac.jp, echoi@kit.ac.jp, iida@itc.naist.jp
+}
+
+%\author{\IEEEauthorblockN{1\textsuperscript{st} Md Rejaul Karim}
+%\IEEEauthorblockA{\textit{Graduate school of Information Science} \\
+%\textit{Nara Institute of Science and Technology}\\
+%Nara, Japan \\
+%rejaul.karim.qw4@is.naist.jp}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Akinori Ihara}
+%\IEEEauthorblockA{\textit{Fuculty of Systems Engineering} \\
+%\textit{Wakayama University}\\
+%Wakayama, Japan \\
+%ihara@sys.wakayama-u.ac.jp}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Eunjong Choi}
+%\IEEEauthorblockA{\textit{Faculty of Information and Human Sciences} \\
+%\textit{Kyoto Institute of Technology}\\
+%Kyoto, Japan \\
+%echoi@kit.ac.jp}
+%\and
+%\IEEEauthorblockN{4\textsuperscript{th} Hajimu Iida}
+%\IEEEauthorblockA{\textit{Graduate school of Information Science} \\
+%\textit{Nara Institute of Science and Technology}\\
+%Nara, Japan \\
+%iida@itc.naist.jp}
+%}
+\maketitle
+
+\begin{abstract}
+This paper empirically investigates the features of the bug reports that are important for the developers to triage and fix bugs. Through a case study of three projects (Camel, Derby, and Wicket) from the Apache ecosystem and two projects (Firefox and Thunderbird) the Mozilla ecosystem, we identify five key features that developers often request during bug fixing. We also find that missing these key features in the initial bug reports significantly affect the bug fixing process. In addition, we build classification models using four popular classification techniques to predict whether reporters should provide certain key features to make a good bug report by providing a minimum number of features at the initial submission.
+
+This paper is an extended abstract of a paper accepted in the Journal of Software: Evolution and Process (JSEP). Now, the paper is under the publication pipeline that is going to be published in the upcoming issue. The original paper is attached with this abstract.
+\end{abstract}
+
+%\begin{IEEEkeywords}
+%component, formatting, style, styling, insert
+%\end{IEEEkeywords}
+
+\section{Overview}
+Bug reports are the primary means through which developers triage and fix bugs. A typical bug report contains input fields (e.g., a summary and description), which contain unstructured features such as what the reporters saw happen (Observed Behavior), what they expected to see happen (Expected Behavior), and a clear set of instructions that developers can use to reproduce the bugs (Steps to Reproduce). These unstructured features are crucial for the developers to triage and fix the bugs~\cite{Bettenburg:2008}. However, reporters often omit these features in their bug reports~\cite{Breu:2010, Davies:2014, Aranda:2009, Sasso:2016}. A previous empirical study on the eclipse project found that 78.1 percent of bug reports contain fewer than 100 words~\cite{Zhang:2017}. Thus, developers have to spend much time and effort in order to understand the bugs based on features provided or need to ask reporters to provide additional features~\cite{Breu:2010, Karim:2017, ErfaniJoorabchi:2014}. Hence, a well-described bug report is crucial to improving the bug-fixing process.
+
+To better understand which features are important, in this paper, we perform an exploratory study on five OSS projects using qualitative and quantitative analyses. In particular, we first perform a qualitative analysis to identify the key features by examining those that are provided initially (i.e., features that reporters provide in the initial bug reports), as well as additional required features (i.e., features that reporters missed in their initial submission, but that were required by developers to fix bugs). Through qualitative analysis, we identify five key features that reporters often miss in their initial bug reports and developers require them for fixing bugs.
+
+One of the main reasons for the lack of unstructured features in bug reports is inadequate tool support~\cite{Zimmermann:2012, Breu:2010, Chaparro:2017, github:2016}. Thus, in order to help reporters, we build prediction models to predict whether reporters should provide certain key features to make a good bug report by leveraging historical bug-fixing activities. We build prediction models using four popular text-classification techniques since the performance of prediction models varies between the text-classification techniques~\cite{Yang:2002, Xia:2014} depending on the context. We evaluate our models using the bug reports of Camel, Derby, Wicket, Firefox, and Thunderbird projects. Our models achieve promising f1-scores when predicting key features. Our comparative study of the classification techniques reveals that NBM outperforms the other techniques in terms of predicting key features. We believe that Our findings can benefit reporters to improve the contents of bug reports.
+
+\section{Satisfying the criteria for journal-first paper}
+\begin{table}[h]
+%\caption{Statistics of bug reports and the sample size for each target project.}
+\label{table:statBR}
+\begin{center}
+\begin{tabular}{ |p{3.9cm}|p{3.9cm}|}
+\hline
+Accepted Date& This paper is accepted on May 13, 2019 for the the Journal of Software: Evolution and Process (JSEP).\\ \hline
+The paper is in the scope of the
+conference.& This paper fits under software engineering research topics such as empirical studies of software maintenance and evolution, change and defect management, and mining software repositories.\\ \hline
+The paper reports completely new research results and/or presents
+novel contributions that significantly extend and were not previously
+reported in prior work & This paper reports several findings of an empirical study and proposed an approach in an effort to improve the bug management process.\\ \hline
+The paper does not extend prior work solely with additional proofs or algorithms (or other such details presented for completeness), additional
+empirical results, or minor enhancements or variants of the results presented in the prior work.& This paper is not an extension to any of our prior work or that of others. \\ \hline
+The paper has not been presented at, and is not under consideration
+for, journal-first programs of other conferences.& The paper and its material has not been presented at, and is not under consideration for, other conferences. \\ \hline
+\end{tabular}
+\end{center}
+\end{table} 
+\section{Summary}
+In this journal, we have reported completely new research results of an exploratory study on five OSS projects from two ecosystems using qualitative and quantitative analyses. Our research work is closely related to the three main research topics of the ICSME 2019. We have not presented our findings at any conference. Thus, we strongly believe that our paper satisfies the ICSME journal first track criteria for the above reasons. The ICSME 2019 journal first track would be a great opportunity for us to present and share our findings in the international software engineering community.
+\bibliographystyle{IEEEtran}
+\bibliography{ICSME}
+\end{document}
