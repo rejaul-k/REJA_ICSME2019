@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.31)  10 JUN 2019 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.31)  11 JUN 2019 18:54
 entering extended mode
 **./ICSME2019_Abstract.tex
 (ICSME2019_Abstract.tex
@@ -455,11 +455,11 @@ Underfull \hbox (badness 6526) in paragraph at lines 83--83
 \OT1/ptm/m/n/8 as em-pir-i-cal stud-ies of soft-
  []
 
-(ICSME2019_Abstract.bbl [1{C:/Users/REZA/AppData/Local/MiKTeX/2.9/pdftex/config
-/pdftex.map}
+[1{C:/Users/REZA/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-])
+]
+(ICSME2019_Abstract.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -475,11 +475,11 @@ Before submitting the final camera ready copy, remember to:
 
 ] (ICSME2019_Abstract.aux) ) 
 Here is how much of TeX's memory you used:
- 4373 strings out of 493305
- 65009 string characters out of 3130237
- 131512 words of memory out of 3000000
- 7863 multiletter control sequences out of 15000+200000
- 41148 words of font info for 95 fonts, out of 3000000 for 9000
+ 4375 strings out of 493305
+ 65024 string characters out of 3130237
+ 132512 words of memory out of 3000000
+ 7864 multiletter control sequences out of 15000+200000
+ 42255 words of font info for 96 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,14n,35p,1127b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/REZA/AppData/Local/Programs/MiKTeX 2.9/fo
@@ -489,7 +489,7 @@ eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/REZA/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/REZA/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/REZA/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ICSME2019_Abstract.pdf (2 pages, 75490 bytes).
+Output written on ICSME2019_Abstract.pdf (2 pages, 76155 bytes).
 PDF statistics:
  30 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
